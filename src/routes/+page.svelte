@@ -1,6 +1,7 @@
 <script>
 	import JournalPage from "$lib/components/JournalPage.svelte";
 	import Component from "$lib/Component.svelte";
+	import Walkman from "$lib/components/Walkman.svelte";
 </script>
 
 <section class="m-6">
@@ -8,9 +9,24 @@
 	<div class="flex flex-col justify-between">
 		<Component
 			title="1. Journal Page"
-			desc="Layout for a journal page."
+			desc="Layout for simple journal page with a photo."
 		>
 			<JournalPage />
+		</Component>
+		<Component
+			title="2. Walkman"
+			desc="Walkman with interactive play, next and prev buttons."
+		>
+			<p>
+				<Walkman />
+				Lorem ipsum dolor sit amet, officia excepteur ex
+				fugiat reprehenderit enim labore culpa sint ad nisi
+				Lorem pariatur mollit ex esse exercitation amet.
+				Nisi anim cupidatat excepteur officia. Reprehenderit
+				nostrud nostrud ipsum Lorem est aliquip amet voluptate
+				voluptate dolor minim nulla est proident. Nostrud
+				officia pariatur ut officia.
+			</p>
 		</Component>
 	</div>
 </section>
