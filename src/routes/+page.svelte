@@ -2,6 +2,7 @@
 	import JournalPage from "$lib/components/JournalPage.svelte";
 	import Component from "$lib/Component.svelte";
 	import Walkman from "$lib/components/Walkman.svelte";
+	import PostIt from "$lib/components/PostIt.svelte";
 </script>
 
 <section class="m-6">
@@ -27,6 +28,19 @@
 				voluptate dolor minim nulla est proident. Nostrud
 				officia pariatur ut officia.
 			</p>
+		</Component>
+		<Component
+			title="3. Sticky Note"
+			desc="Sticky notes ~ color changes each time the page reloads."
+		>
+			<div class="flex flex-wrap gap-x-2 gap-y-2">
+				<PostIt />
+				<PostIt />
+				<PostIt />
+				<PostIt />
+				<PostIt />
+				<PostIt />
+			</div>
 		</Component>
 	</div>
 </section>
