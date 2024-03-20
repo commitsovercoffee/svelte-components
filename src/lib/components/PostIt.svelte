@@ -78,8 +78,6 @@
 	];
 
 	onMount(() => {
-		console.log(colorClasses);
-
 		// Pick a random rotation
 		rotation =
 			rotations[Math.floor(Math.random() * rotations.length)];

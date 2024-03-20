@@ -3,6 +3,7 @@
 	import Component from "$lib/Component.svelte";
 	import Walkman from "$lib/components/Walkman.svelte";
 	import PostIt from "$lib/components/PostIt.svelte";
+	import WordCloud from "$lib/components/WordCloud.svelte";
 </script>
 
 <section class="m-6">
@@ -41,6 +42,9 @@
 				<PostIt />
 				<PostIt />
 			</div>
+		</Component>
+		<Component title="4. Word Cloud" desc="A colorful word cloud.">
+			<WordCloud />
 		</Component>
 	</div>
 </section>
