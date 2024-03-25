@@ -4,6 +4,7 @@
 	import Walkman from "$lib/components/Walkman.svelte";
 	import PostIt from "$lib/components/PostIt.svelte";
 	import WordCloud from "$lib/components/WordCloud.svelte";
+	import Timeline from "$lib/components/Timeline.svelte";
 </script>
 
 <section class="m-6">
@@ -45,6 +46,41 @@
 		</Component>
 		<Component title="4. Word Cloud" desc="A colorful word cloud.">
 			<WordCloud />
+		</Component>
+
+		<Component
+			title="5. Timeline"
+			desc="An interactive horizontal timeline."
+		>
+			<Timeline
+				events={[
+					{
+						year: 1995,
+						label: "Born & almost died",
+						prompt: "back to present",
+					},
+					{
+						year: 2006,
+						label: "First computer interaction",
+						prompt: "keep going",
+					},
+					{
+						year: 2010,
+						label: "Started learning HTML and CSS",
+						prompt: "waaaay back",
+					},
+					{
+						year: 2013,
+						label: "Began JavaScript journey",
+						prompt: "more back",
+					},
+					{
+						year: 2019,
+						label: "Explored Svelte3",
+						prompt: "go back",
+					},
+				]}
+			/>
 		</Component>
 	</div>
 </section>
