@@ -5,6 +5,7 @@
 	import PostIt from "$lib/components/PostIt.svelte";
 	import WordCloud from "$lib/components/WordCloud.svelte";
 	import Timeline from "$lib/components/Timeline.svelte";
+	import Printer from "$lib/components/Printer.svelte";
 </script>
 
 <section class="m-6">
@@ -79,6 +80,22 @@
 						label: "Explored Svelte3",
 						prompt: "go back",
 					},
+				]}
+			/>
+		</Component>
+		<Component title="5. Printer." desc="Prints random text.">
+			<Printer
+				facts={[
+					"The developer once coded an entire project overnight and it went on to become a bestseller.",
+					"Our developer can debug code faster than the speed of light.",
+					"The developer has a black belt in coding.",
+					"Our developer can write code blindfolded and still produce bug-free software.",
+					"The developer once fixed a bug by simply staring at the screen.",
+					"Our developer's code is so efficient that it's often mistaken for magic.",
+					"The developer never needs to use Stack Overflow because they are the source of all knowledge.",
+					"Our developer's keyboard is rumored to be made of pure gold due to all the successful projects it has been a part of.",
+					"The developer dreams in code and turns those dreams into reality every day.",
+					"Our developer's favorite pastime is refactoring code for fun.",
 				]}
 			/>
 		</Component>
