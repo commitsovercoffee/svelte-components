@@ -4,10 +4,12 @@
 	import { linear } from "svelte/easing";
 	import { quintOut } from "svelte/easing";
 	let visible = true;
+	let isPrintTrayEmpty = false;
+
 	let text = "How you doin'? - Joey ";
 
 	/**
-	 * Array containing facts.
+	 * An array containing facts.
 	 * @type {Array<string>}
 	 */
 	export let facts;
@@ -18,9 +20,7 @@
 		}
 
 		const randomIndex = Math.floor(Math.random() * facts.length);
-		const fact = facts[randomIndex];
-		facts.splice(randomIndex, 1); // Remove the fact to avoid repetition
-		return fact;
+		return facts[randomIndex];
 	}
 </script>
 
@@ -30,20 +30,26 @@
 	<div
 		class="my-4 rounded-xl w-min px-2 bg-orange-200 flex justify-start items-center shadow-inner shadow-orange-600"
 	>
-		<!-- print -->
+		<!-- print new fact -->
 		<button
-			class="w-8 h-8 p-4 m-2 rounded-full border-4 border-l-green-300 border-t-green-300 border-r-green-600 border-b-green-600 bg-green-400 active:scale-50 transition-transform duration-200 ease-in-out shadow-md shadow-emerald-900"
+			class="w-8 h-8 p-4 m-2 rounded-full border-4 border-l-green-300 border-t-green-300 border-r-green-600 border-b-green-600 bg-green-400 active:scale-75 transition-transform duration-200 ease-in-out shadow-md shadow-emerald-900"
 			on:click={() => {
-				text = getRandomFact();
-				visible = true;
+				if (isPrintTrayEmpty) {
+					isPrintTrayEmpty = false;
+					text = getRandomFact();
+					visible = true;
+				}
 			}}
 		>
 		</button>
-		<!-- discard -->
+		<!-- discard printed fact -->
 		<button
-			class="w-8 h-8 p-4 m-2 rounded-full border-4 border-l-red-300 border-t-red-300 border-r-red-600 border-b-red-600 bg-red-400 active:scale-50 transition-transform duration-200 ease-in-out shadow-md shadow-red-900"
+			class="w-8 h-8 p-4 m-2 rounded-full border-4 border-l-red-300 border-t-red-300 border-r-red-600 border-b-red-600 bg-red-400 active:scale-75 transition-transform duration-200 ease-in-out shadow-md shadow-red-900"
 			on:click={() => {
+				facts = facts.filter((item) => item !== text);
 				visible = false;
+				isPrintTrayEmpty = true;
+				console.log(facts);
 			}}
 		>
 		</button>
